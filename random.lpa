@@ -1,0 +1,27 @@
+import random
+students = {
+    "22951A0465": "Harshitha",
+    "22951A04A9": "Nirosh",
+    "22951A04A5": "Sindhu",
+    "22951A04B9": "Pradeep",
+    "22951A04B7": "Pavan Sri Mani Kanta",
+    "22951A04B3": "Nitish",
+    "22951A0477": "Krishna",
+    "22951A0490": "Sakethuu",
+    "22951A0483": "Likith",
+    "22951A0474": "Karthik"
+}
+lpa={}
+def get_lpa(student_id):
+    if student_id not in lpa:
+        lpa[student_id]=random.randint(6,29)
+    return lpa[student_id]
+while True:
+    student_id=input("enter the student id:").strip()
+    if student_id.lower()=="exit":
+        break
+    if student_id in students:
+        lpa=get_lpa(student_id)
+        print(f"studnent: {students[student_id]}, lpa: {lpa} lakhs per annum")
+    else:
+        print("better luck next time :)")
